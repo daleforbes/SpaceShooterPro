@@ -25,7 +25,6 @@ public class EnemyLaser : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Damaged Player");
             Player _player = collision.GetComponent<Player>();
             _player.Damage();
             Instantiate(_explosionPrefab, transform.position, Quaternion.identity);

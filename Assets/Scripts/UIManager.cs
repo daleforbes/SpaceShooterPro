@@ -13,13 +13,16 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Image _livesUIImage;
     [SerializeField]
-    private Transform _gameOverText;
+    private Transform _gameOverText, _noAmmoText, _lowAmmoText;
     [SerializeField]
-    private float _flickerSpeed = .25f;
+    private float _flickerSpeed = .25f, _flickerSpeedFast = .15f;
     [SerializeField]
     private Text _restartText;
+
+    private bool _lowAmmoActive = false;
     
     private GameManager _gameManager;
+    Coroutine _noAmmoRoutine = null, _lowAmmoRoutine = null;
 
     private void Start()
     {
@@ -35,16 +38,17 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateLives(int lives)
     {
+
         _livesUIImage.sprite = _livesSprite[lives];
         if (lives <= 0)
         {
             _restartText.gameObject.SetActive(true);
             _gameManager.GameOver();
-            StartCoroutine(FlickerText());
+            StartCoroutine(FlickerGameOverText());
         }
         
     }
-    IEnumerator FlickerText()
+    IEnumerator FlickerGameOverText()
     {
         while (true)
         {
@@ -52,5 +56,50 @@ public class UIManager : MonoBehaviour
             yield return new WaitForSeconds(_flickerSpeed);
         }
         
+    }
+    public void TurnOnLowAmmo()
+    {
+        if (_lowAmmoRoutine == null)
+        {
+            _lowAmmoRoutine = StartCoroutine(FlickerLowAmmoText());
+            _lowAmmoActive = true;
+        }
+    }
+    public void TurnOffLowAmmo()
+    {
+        if (_lowAmmoRoutine != null)
+            StopCoroutine(_lowAmmoRoutine);
+        _lowAmmoText.gameObject.SetActive(false);
+        _lowAmmoActive = false;
+    }
+    IEnumerator FlickerLowAmmoText()
+    {
+        while (true)
+        {
+            _lowAmmoText.gameObject.SetActive(!_lowAmmoText.gameObject.activeSelf);
+            yield return new WaitForSeconds(_flickerSpeed);
+        }
+    }
+    public bool LowAmmoActive()
+    {
+        return _lowAmmoActive;
+    }
+    public void TurnOnNoAmmo()
+    {
+        _noAmmoRoutine = StartCoroutine(FlickerNoAmmoText());
+    }
+    public void TurnOffNoAmmo()
+    {
+        if (_noAmmoRoutine != null)
+            StopCoroutine(_noAmmoRoutine);
+        _noAmmoText.gameObject.SetActive(false);
+    }
+    IEnumerator FlickerNoAmmoText()
+    {
+        while (true)
+        {
+            _noAmmoText.gameObject.SetActive(!_noAmmoText.gameObject.activeSelf);
+            yield return new WaitForSeconds(_flickerSpeedFast);
+        }
     }
 }

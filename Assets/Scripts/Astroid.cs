@@ -10,10 +10,15 @@ public class Astroid : MonoBehaviour
     [SerializeField]
     private GameObject _explosionPrefab;
     private SpawnManager _spawnManager;
+    private Player _player;
 
     private void Start()
     {
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
+        _player = GameObject.Find("Player").GetComponent<Player>();
+        if (_player == null)
+            Debug.LogError("Can't find Player from Astroid");
+
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -22,6 +27,7 @@ public class Astroid : MonoBehaviour
         {
             Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
+            _player.RefillAmmo();
             _spawnManager.StartEnemyWave();
             Destroy(this.gameObject, 0.25f);
         }

@@ -37,6 +37,15 @@ public class PowerUp : MonoBehaviour
                     case 2:
                         player.ActivateShield();
                         break;
+                    case 3:
+                        player.ActivateAmmo();
+                        break;
+                    case 4:
+                        player.ActivateHealth();
+                        break;
+                    case 5:
+                        player.ActivateLaserBurst();
+                        break;
                 }
                 Destroy(this.gameObject);
             }

@@ -47,7 +47,34 @@ public class SpawnManager : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(3f, 7f));
 
-            int i = Random.Range(0, _powerUpPrefab.Length);
+            // Weighted Random (Laser Bursh should come out rarely
+            int i = Random.Range(1, 56);
+
+            if (i <= 10) // Triple Shot
+            {
+                i = 0;
+            }
+            else if (i >= 11 && i <= 20) // Speed
+            {
+                i = 1;
+            }
+            else if (i >= 21 && i <= 30) // Shield
+            {
+                i = 2;
+            }
+            else if (i >= 31 && i <= 40) // Ammo
+            {
+                i = 3;
+            }
+            else if (i >= 41 && i <= 50) // Health
+            {
+                i = 4;
+            }
+            else if (i >= 51 && i <= 55) // Laser Burst
+            {
+                i = 5;
+            }
+            
             Instantiate(_powerUpPrefab[i], new Vector3(Random.Range(-9f, 9f), 8.5f, 0), Quaternion.identity);
         }
     }
