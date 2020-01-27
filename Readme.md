@@ -13,6 +13,7 @@
 ![](.//media/image1.png)
 
 ***Wave System***
+
 ![](.//media/image2.png)
 
 
@@ -33,12 +34,14 @@ Wave increments will continue until Boss wave is reached.
 Wave number displayed before each wave.
 
 ***Negative Pickup***
+
 ![](.//media/image3.png)
 
 "Slow Down" pickup will slow the player down for 5 seconds and flash the
 screen.
 
 ***New Enemy Type***
+
 ![](.//media/image4.png)
 
 Nickname "Zig-Zag", new Enemy has zig-zag motion as it moves down the
@@ -50,6 +53,7 @@ solid beam.
 Effects Player same as "normal" enemy laser beam.
 
 ***Balanced Spawning***
+
 ![](.//media/image8.png)![](.//media/image9.png)
 
 Probabilities for Enemies and Power Ups is controlled in the Spawn
@@ -73,6 +77,7 @@ certain range.
 Ramming range controlled by Child of Player with a Collider2D.
 
 ***Smart Enemy***
+
 ![](.//media/image12.png)
 
 Nickname "Front\_Back" will fire up or down depending on whether Y
@@ -99,6 +104,7 @@ Message on Asteroid screen displays instruction for 5 seconds or until
 asteroid is destroyed.
 
 ***Enemy Avoid Shot***
+
 ![](.//media/image13.png)
 
 Nickname "Dodger" appears to use satellite to detect Player lasers.
@@ -110,6 +116,7 @@ If Player laser in range, uses X position of laser to angle 40 degrees
 left or right.
 
 ***Homing Projectile***
+
 ![](.//media/image14.png)
 
 Nickname "Homer". Power Up will make all Player lasers find closest
@@ -119,6 +126,7 @@ Lasts for 5 seconds. If no enemies remain, will eventually fly out of
 range and be destroyed by script.
 
 ***Boss AI***
+
 ![](.//media/image15.png)
 Boss starts by moving down the screen to
 the center, then randomly moves ("Dodges") around the center of the
