@@ -6,13 +6,29 @@ public class PowerUp : MonoBehaviour
 {
     [SerializeField]
     private float _powerUpSpeed = 3f;
-    
+    private Player _player;
+
     [SerializeField]
     private int powerUpID;
+    private bool _gotoPlayer = false;
 
+    private void Start()
+    {
+        _player = GameObject.Find("Player").GetComponent<Player>();
+        if (_player == null) Debug.LogError("Cannot find Player");
+    }
     private void Update()
     {
-        transform.Translate(Vector3.down * Time.deltaTime * _powerUpSpeed);
+        
+        if (_gotoPlayer)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _powerUpSpeed * 2 * Time.deltaTime);
+        }
+        else
+        {
+            transform.Translate(Vector3.down * Time.deltaTime * _powerUpSpeed);
+        }
+        
         if (transform.position.y < -3)
         {
             Destroy(this.gameObject);
@@ -46,9 +62,19 @@ public class PowerUp : MonoBehaviour
                     case 5:
                         player.ActivateLaserBurst();
                         break;
+                    case 6:
+                        player.ActivateSlow();
+                        break;
+                    case 7:
+                        player.ActivateHomer();
+                        break;
                 }
                 Destroy(this.gameObject);
             }
         }
+    }
+    public void GoToPlayer()
+    {
+        _gotoPlayer = true;
     }
 }

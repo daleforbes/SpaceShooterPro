@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
+    [SerializeField]
     private bool _isGameOver = false;
 
     // Update is called once per frame
@@ -25,5 +25,9 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         _isGameOver = true;
+    }
+    public bool GetGameOver()
+    {
+        return _isGameOver;
     }
 }

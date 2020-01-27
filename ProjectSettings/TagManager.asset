@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Laser
+  - EnemyDiver
+  - PowerUp
+  - Boss
   layers:
   - Default
   - TransparentFX

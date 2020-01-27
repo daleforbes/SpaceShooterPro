@@ -135,3 +135,4 @@ MonoBehaviour:
   _rotateSpeed: 5
   _explosionPrefab: {fileID: 4526775943769707120, guid: 5c4d821505d39604f93f8ff6aa2393a1,
     type: 3}
+  _cToCollectText: {fileID: 0}
