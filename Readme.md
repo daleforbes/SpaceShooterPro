@@ -10,11 +10,10 @@
 
 ***Player Ammo***
 
-![](.//media/image1.png){width="2.791809930008749in"
-height="0.7153149606299213in"}
+![](.//media/image1.png)
 
-![](.//media/image2.png){width="4.257163167104112in"
-height="2.2362259405074365in"}***Wave System***
+![](.//media/image2.png)
+***Wave System***
 
 Spawn Manager controls:
 
@@ -32,14 +31,14 @@ Wave increments will continue until Boss wave is reached.
 
 Wave number displayed before each wave.
 
-![](.//media/image3.png){width="0.5986111111111111in"
-height="0.7701388888888889in"}***Negative Pickup***
+![](.//media/image3.png)
+***Negative Pickup***
 
 "Slow Down" pickup will slow the player down for 5 seconds and flash the
 screen.
 
-![](.//media/image4.png){width="1.0694444444444444in"
-height="1.3406474190726159in"}***New Enemy Type***
+![](.//media/image4.png)
+***New Enemy Type***
 
 Nickname "Zig-Zag", new Enemy has zig-zag motion as it moves down the
 screen.
@@ -49,33 +48,31 @@ solid beam.
 
 Effects Player same as "normal" enemy laser beam.
 
-![](.//media/image8.png){width="2.865972222222222in"
-height="4.952083333333333in"}![](.//media/image9.png){width="3.2416666666666667in"
-height="4.065972222222222in"}***Balanced Spawning***
+![](.//media/image8.png)![](.//media/image9.png)
+***Balanced Spawning***
 
 Probabilities for Enemies and Power Ups is controlled in the Spawn
 Manager.
 
 ***Enemy with Shield***
 
-![](.//media/image10.png){width="0.6701388888888888in"
-height="0.8659722222222223in"}New enemy type. Takes 1 hit to remove
+![](.//media/image10.png)
+New enemy type. Takes 1 hit to remove
 shield.
 
 Shield power-down sound with hit.
 
 ***Aggressive Enemy Type***
 
-![](.//media/image11.png){width="0.6430555555555556in"
-height="0.8152777777777778in"}
+![](.//media/image11.png)
 
 Nickname "Enemy Diver" will try to ram the player as it gets within a
 certain range.
 
 Ramming range controlled by Child of Player with a Collider2D.
 
-![](.//media/image12.png){width="0.7513888888888889in"
-height="0.7513888888888889in"} ***Smart Enemy***
+![](.//media/image12.png)
+***Smart Enemy***
 
 Nickname "Front\_Back" will fire up or down depending on whether Y
 position of player is greater than or equal to enemy Y position.
@@ -100,8 +97,8 @@ by the Enemies.
 Message on Asteroid screen displays instruction for 5 seconds or until
 asteroid is destroyed.
 
-![](.//media/image13.png){width="0.7569444444444444in"
-height="0.9548611111111112in"}***Enemy Avoid Shot***
+![](.//media/image13.png)
+***Enemy Avoid Shot***
 
 Nickname "Dodger" appears to use satellite to detect Player lasers.
 
@@ -111,8 +108,8 @@ laser in range.
 If Player laser in range, uses X position of laser to angle 40 degrees
 left or right.
 
-![](.//media/image14.png){width="0.5090277777777777in"
-height="0.7895833333333333in"}***Homing Projectile***
+![](.//media/image14.png)
+***Homing Projectile***
 
 Nickname "Homer". Power Up will make all Player lasers find closest
 enemy -- including Boss.
@@ -122,8 +119,8 @@ range and be destroyed by script.
 
 ***Boss AI***
 
-![](.//media/image15.png){width="1.187671697287839in"
-height="0.9490441819772528in"}Boss starts by moving down the screen to
+![](.//media/image15.png)
+Boss starts by moving down the screen to
 the center, then randomly moves ("Dodges") around the center of the
 screen.
 
@@ -151,5 +148,4 @@ Boss shoots new projectiles.
     -   Game Over screen displays "Victory!" and offers same Restart
         options as Game Over.
 
-![](.//media/image16.png){width="5.590565398075241in"
-height="2.250115923009624in"}
+![](.//media/image16.png)
