@@ -12,8 +12,9 @@
 
 ![](.//media/image1.png)
 
-![](.//media/image2.png)
 ***Wave System***
+![](.//media/image2.png)
+
 
 Spawn Manager controls:
 
@@ -31,14 +32,14 @@ Wave increments will continue until Boss wave is reached.
 
 Wave number displayed before each wave.
 
-![](.//media/image3.png)
 ***Negative Pickup***
+![](.//media/image3.png)
 
 "Slow Down" pickup will slow the player down for 5 seconds and flash the
 screen.
 
-![](.//media/image4.png)
 ***New Enemy Type***
+![](.//media/image4.png)
 
 Nickname "Zig-Zag", new Enemy has zig-zag motion as it moves down the
 screen.
@@ -48,8 +49,8 @@ solid beam.
 
 Effects Player same as "normal" enemy laser beam.
 
-![](.//media/image8.png)![](.//media/image9.png)
 ***Balanced Spawning***
+![](.//media/image8.png)![](.//media/image9.png)
 
 Probabilities for Enemies and Power Ups is controlled in the Spawn
 Manager.
@@ -71,8 +72,8 @@ certain range.
 
 Ramming range controlled by Child of Player with a Collider2D.
 
-![](.//media/image12.png)
 ***Smart Enemy***
+![](.//media/image12.png)
 
 Nickname "Front\_Back" will fire up or down depending on whether Y
 position of player is greater than or equal to enemy Y position.
@@ -97,8 +98,8 @@ by the Enemies.
 Message on Asteroid screen displays instruction for 5 seconds or until
 asteroid is destroyed.
 
-![](.//media/image13.png)
 ***Enemy Avoid Shot***
+![](.//media/image13.png)
 
 Nickname "Dodger" appears to use satellite to detect Player lasers.
 
@@ -108,8 +109,8 @@ laser in range.
 If Player laser in range, uses X position of laser to angle 40 degrees
 left or right.
 
-![](.//media/image14.png)
 ***Homing Projectile***
+![](.//media/image14.png)
 
 Nickname "Homer". Power Up will make all Player lasers find closest
 enemy -- including Boss.
@@ -118,7 +119,6 @@ Lasts for 5 seconds. If no enemies remain, will eventually fly out of
 range and be destroyed by script.
 
 ***Boss AI***
-
 ![](.//media/image15.png)
 Boss starts by moving down the screen to
 the center, then randomly moves ("Dodges") around the center of the
